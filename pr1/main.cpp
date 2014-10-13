@@ -1,10 +1,20 @@
-#include <QCoreApplication>
-#include <stdio.h>
+#include <fstream>
+#include <iostream>
+using namespace std;
 
-int main(int argc, char *argv[])
+int main()
 {
-    //QCoreApplication a(argc, argv);
-    printf("adsasd\n");
-
-    //return a.exec();
+    char ch;
+    ifstream infile("TEST.TXT");
+    if (infile != NULL) {
+        while( infile ){
+            infile.get(ch);
+            cout << ch;
+            }
+        cout << endl;
+    }
+    else{
+    cout << "bad file\n";
+}
+        return 0;
 }
