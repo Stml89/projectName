@@ -10,12 +10,11 @@ int main()
         while( infile ){
             infile.get(ch);
             cout << ch;
+                cout << "good file\n";
             }
         cout << endl;
     }
     else{
-    cout << "bad file\n";
-    cout << "bad file\n";
     cout << "bad file\n";
 }
         return 0;
