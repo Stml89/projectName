@@ -11,7 +11,6 @@ int main()
             infile.get(ch);
             cout << ch;
                 cout << "good file\n";
-                cout << "yes\n";
             }
         cout << endl;
     }
