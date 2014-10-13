@@ -15,6 +15,8 @@ int main()
     }
     else{
     cout << "bad file\n";
+    cout << "bad file\n";
+    cout << "bad file\n";
 }
         return 0;
 }
