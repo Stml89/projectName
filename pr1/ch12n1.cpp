@@ -1,4 +1,4 @@
-// englcon.cpp
+/*// englcon.cpp
 // constructors, adds objects using member function
 #include <iostream>
 #include <fstream>
@@ -42,7 +42,7 @@ void Distance::add_dist(Distance d2,  Distance d3) //const
    }
 ////////////////////////////////////////////////////////////////
 int main()
-    {
+{
     char ch;
     Distance dist1;          //define two lengths
     //Distance dist2(11, 6.25);       //define and initialize dist2
@@ -71,4 +71,4 @@ int main()
 
    cout << endl;
    return 0;
-   }
+}*/
