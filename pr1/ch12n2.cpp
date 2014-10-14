@@ -12,6 +12,9 @@ int main(int argc, char* argv[] )
         cerr << "\nФормат команды: otype имя_файла\n";
         //exit(-1);
     }
+    for(;;){
+        cout << "2131231";
+    }
         char ch;
         // символ для считывания
         ifstream infile;
