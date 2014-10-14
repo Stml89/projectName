@@ -15,4 +15,6 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += \
+    ch12n1.cpp \
+    ch12n2.cpp
