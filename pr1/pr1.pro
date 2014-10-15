@@ -17,4 +17,5 @@ TEMPLATE = app
 
 SOURCES += \
     ch12n1.cpp \
-    ch12n2.cpp
+    ch12n3.cpp \
+    ch12n4.cpp
