@@ -1,14 +1,14 @@
-#include <fstream>
+/*#include <fstream>
 #include <iostream>
 using namespace std;
-const int SIZE = 20;
+const int SIZE = 10;
 
 class person
 {
 protected:
     char name[SIZE];
     char secName[SIZE];
-    int number;
+    unsigned long number;
 public:
     friend istream& operator>>( istream&, person& );
     friend ostream& operator<<( ostream&, person& );
@@ -16,16 +16,13 @@ public:
 //-------------------------------------------------------
 istream& operator>>( istream& f, person& per )
 {
-    const char* space = "-";
-    //f >> "Name: " >> per.name >> "secName: " >> per.secName >> "number: " >> per.number >> endl;
     f >> per.name >> per.secName >> per.number;
     return f;
 }
 //-------------------------------------------------------
 ostream& operator<<( ostream& f, person& per )
 {
-    f << "Name: " << per.name << "secName: " << per.secName << "number: " << per.number << endl;
-    f << per.name << " " << per.secName << " " << per.number;
+    f << per.name << " " << per.secName << " " << per.number << endl;
     return f;
 }
 //-------------------------------------------------------
@@ -35,11 +32,11 @@ int main( )
     char ch;
     person pers;
     ofstream ofile;
-    const char* fileName = "ch12n4.txt";
+    const char* fileName = "/home/sstamal/ch12n4.txt";
 
-    ofile.open( fileName );//, ios::app | ios::out | ios::in );
+    ofile.open( fileName, ios::app | ios::out | ios::in );
     do{
-        cout << "\nEnter person data:";
+        cout << "\nEnter person data ( Name secName Num ):";
         cin >> pers;
         ofile << pers;
         cout << "\nAdd other person( y / n )?";
@@ -55,8 +52,8 @@ int main( )
         ifile >> pers;
         if( ifile.eof( ) )
             break;
-        cout << i << "." << pers << endl;
+        cout << i << ". " << pers;
     }
     cout << endl;
     return 0;
-}
+}*/
