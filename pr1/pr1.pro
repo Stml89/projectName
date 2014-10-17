@@ -20,4 +20,6 @@ SOURCES += \
     ch12n3.cpp \
     ch12n4.cpp \
     ch12n5.cpp \
-    123.cpp
+    123.cpp \
+    ch12n6.cpp \
+    ch12n8.cpp

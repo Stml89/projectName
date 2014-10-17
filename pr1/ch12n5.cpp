@@ -1,4 +1,4 @@
-#include <fstream>
+/*#include <fstream>
 #include <iostream>
 using namespace std;
 
@@ -37,7 +37,7 @@ void time1::put_time( time1 &te )
 {
     if( te.h < 10 || te.m < 10 || te.s < 10){
         if( te.h < 10 ) {
-            te.h.str();// +=
+            //te.h.str();// +=
         } else if( te.m < 10 ){
             //te.m =
         } else if( te.s < 10 ){
@@ -57,4 +57,4 @@ int main( )
 
     ti.put_time( ti );
     return 0;
-}
+}*/
