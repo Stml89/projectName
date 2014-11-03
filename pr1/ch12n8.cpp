@@ -1,5 +1,5 @@
 // linked list
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 ////////////////////////////////////////////////////////////////
 typedef struct link                           //one element of list
@@ -48,4 +48,4 @@ int main( )
 
    li.display();      //display entire list
    return 0;
-}
+}*/
