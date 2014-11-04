@@ -23,4 +23,15 @@ SOURCES += \
     123.cpp \
     ch12n6.cpp \
     ch12n8.cpp \
-    ch12n121.cpp
+    ch12n121.cpp \
+    tch12/ch12n1.cpp \
+    ch12/ch12n12.cpp \
+    ch12/ch12n121.cpp \
+    ch12/ch12n3.cpp \
+    ch12/ch12n4.cpp \
+    ch12/ch12n5.cpp \
+    ch12/ch12n6.cpp \
+    ch12/ch12n8.cpp \
+    ch12n12.cpp \
+    ch12/ch12n1.cpp \
+    ch13/ch13n1.cpp

@@ -4,6 +4,7 @@
 //#include <process.h>      // для exit()
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <algorithm>
 const int IDN = 5;
 const int MAXEM = 100;  // максимальное число людей
@@ -43,47 +44,47 @@ class names            // класс person
     static void read();
 };
 //---------------------------------------------------------
-void names::read_specific()
+void names::read_specific( )
 {
     const int MAX = 100;
     char buffer[MAX];
     char buffer2[MAX];
     char id;
-    while (true)
-    {
-        cout << "Введите номер сотрудника: ";
-
+    cout << "Введите номер сотрудника: ";
+    while (true){
         cin >> id;
         if ( cin.good( ) )
         {
             cin.clear();
             ifstream infile;
             infile.open( "name.txt" );
-            if( !infile )           // проверить на наличие ошибок
-            {
+            if( !infile ){           // проверить на наличие ошибок
                 cerr << "\nНевозможно открыть name.txt";
                 exit(-1);
             }
-            while( !infile.eof( ) )
-            {
+            while( !infile.eof( ) ){
                 infile.getline( buffer, MAX );
                 for( int i = 0; i < strlen( buffer ); i++ ){
                     if( buffer[ i ] != ' ' ){
                         buffer2[ i ] = buffer[ i ];
+
+                        cout << "\ndffdf " << buffer2;
                     }
                     else if( buffer[ i ] == '\n' ){
                         cout << "this string does not have a space";
-                    }
-                    else{
                         continue;
                     }
+                    else if( buffer[ i ] == ' '){
+                        if( id == buffer2 ){
+                            count << "123 " << buffer2;
+                        }
+                    }
                 }
-                cout << "\nEEEE "<< buffer2;
+                //cout << "\nEEEE " << buffer2;
             }
             cout << "\n  Таких людей нет.\n";
         }
-        else
-        {
+        else{
             cin.clear();
             cout<<"Неправильно введен номер."<<endl;
             cin.ignore( 10, '\n' );
