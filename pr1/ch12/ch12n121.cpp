@@ -1,4 +1,4 @@
-#include <fstream>      // для файловых потоков
+/*#include <fstream>      // для файловых потоков
 #include <iostream>
 #include <string>
 //#include <process.h>      // для exit()
@@ -55,7 +55,7 @@ void names::read_specific( )
         cin >> id;
         if ( cin.good( ) )
         {
-            cin.clear();
+            cin.clear( );
             ifstream infile;
             infile.open( "name.txt" );
             if( !infile ){           // проверить на наличие ошибок
@@ -192,3 +192,4 @@ int main()
   system("pause");
   return 0;
   }
+*/

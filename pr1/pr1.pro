@@ -34,4 +34,10 @@ SOURCES += \
     ch12/ch12n8.cpp \
     ch12n12.cpp \
     ch12/ch12n1.cpp \
-    ch13/ch13n1.cpp
+    ch13/Elev.cpp \
+    ch13/Elev_app.cpp
+
+HEADERS += \
+    ch13/ELEV.CPP \
+    ch13/Elev.h \
+    ch13/Elev_app.h
