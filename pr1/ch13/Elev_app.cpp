@@ -1,6 +1,6 @@
 // elev_app.cpp
 // client-supplied file
-
+/*
 #include "elev.h"                //for class declarations
 
 int main()
@@ -14,5 +14,5 @@ int main()
       theBuilding.record_floor_reqs(); 
       }
    return 0;
-   }
+   }*/
 

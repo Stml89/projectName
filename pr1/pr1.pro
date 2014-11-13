@@ -35,9 +35,14 @@ SOURCES += \
     ch12n12.cpp \
     ch12/ch12n1.cpp \
     ch13/Elev.cpp \
-    ch13/Elev_app.cpp
+    ch13/Elev_app.cpp \
+    ch13/verylong.cpp \
+    ch13/vl_app.cpp \
+    ch6/ch6n1.cpp
 
 HEADERS += \
     ch13/ELEV.CPP \
     ch13/Elev.h \
-    ch13/Elev_app.h
+    ch13/Elev_app.h \
+    ch13/verylong.h \
+    ch13/msoftcon.h

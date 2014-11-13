@@ -1,6 +1,6 @@
 // elev.cpp
 // contains class data and member function definitions
-
+/*
 #include "Elev.h"     //include class declarations
 ////////////////////////////////////////////////////////////////
 //           function definitions for class building      
@@ -443,3 +443,4 @@ void elevator::get_destinations()     //stop, get destinations
       }
    }  //end get_destinations()
 //--------------------------------------------------------------
+*/
