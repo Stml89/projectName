@@ -13,10 +13,9 @@ public:
     { }
     Int( int a ): _int( a )
     { }
-    void show( Int _int )
+    void show( )const
     {
-        printf( "\nShow func: ", _int );
-        //std::cout << "\nShow func: " << _int;
+        printf( "\nresalt is: %d\n", _int );
     }
     friend Int operator+(const Int &a, const Int &b)
     {
@@ -30,7 +29,6 @@ int main( )
     Int ii2( 1 );
     Int ii3 = ii1 + ii2;
 
-//    ii3 == Int::plusInt( ii1, ii2 );
-    printf( "\nii3 = %d ", ii3 );
+    ii3.show( );
     return 0;
 }
