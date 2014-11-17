@@ -39,7 +39,9 @@ SOURCES += \
     ch13/verylong.cpp \
     ch13/vl_app.cpp \
     ch6/ch6n1.cpp \
-    ch6/ch6n2.cpp
+    ch6/ch6n2.cpp \
+    ch6/ch6n3.cpp \
+    ch6/ch6n4.cpp
 
 HEADERS += \
     ch13/ELEV.CPP \

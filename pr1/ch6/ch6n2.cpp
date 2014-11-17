@@ -1,34 +1,52 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define ESC = 27;
 
 using namespace std;
 
 class tollBooth
 {
-public:
+private:
     unsigned int sumOfCar;
     double sumOfCash;
 
-private:
+public:
     tollBooth( ): sumOfCar( 0 ), sumOfCash( 0 )
     { }
-    tollBooth payingCar( tollBooth &sumCar, tollBooth &sumcash )
+    void payingCar( )
     {
-        sumCar++;
-        sumcash += 0.5;
-        return tollBooth;
+        sumOfCar++;
+        sumOfCash += 0.5;
     }
-    tollBooth nopayCar( tollBooth &sumCar)
+    tollBooth nopayCar( )
     {
-        sumCar++;
-        return tollBooth;
+        sumOfCar++;
     }
-
+    void show( )const
+    {
+        printf( "\nTotal sum is: %d\n", sumOfCash );
+        printf( "\ncars : %d\n", sumOfCar );
+    }
 };
 
-int main()
+int main( )
 {
+    char ch;
     tollBooth tB;
 
+        do{
+            printf( "najmite 'y' ili 'n'\n" );
+            ch = getchar();
+
+               if( ch == 'y' )//y
+                    tB.payingCar( );
+
+               else if( ch == 'n' )//n
+                    tB.nopayCar( );
+        }while( ch != ESC );
+    tB.show( );
+    return 0;
 }
+*/

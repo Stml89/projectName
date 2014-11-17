@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 using namespace std;
@@ -31,4 +31,4 @@ int main( )
 
     ii3.show( );
     return 0;
-}
+}*/
