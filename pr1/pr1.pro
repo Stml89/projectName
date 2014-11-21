@@ -41,7 +41,12 @@ SOURCES += \
     ch6/ch6n1.cpp \
     ch6/ch6n2.cpp \
     ch6/ch6n3.cpp \
-    ch6/ch6n4.cpp
+    ch6/ch6n4.cpp \
+    ch6/ch6n5.cpp \
+    ch6/ch6n7.cpp \
+    ch6/ch6n8.cpp \
+    ch6/ch6n9.cpp \
+    ch6/ch6n10.cpp
 
 HEADERS += \
     ch13/ELEV.CPP \
