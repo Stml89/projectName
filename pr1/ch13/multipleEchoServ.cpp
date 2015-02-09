@@ -353,12 +353,13 @@ eTestResult modemDialTest( void )
 
 eTestResult simpleEchoServTest( void )
 {
-    BOOLEAN flag = FALSE;
+    //BOOLEAN flag = FALSE;
     int       list_s, conn_s;
     struct    sockaddr_in servaddr;//, client_address;
     //char      buffer[ MAX_LINE ];
     //int       *new_sock;
     fd_set readfds, testfds;
+    int fin = 0;
 
     LOG( "Creating the listening socket" );
     if( ( list_s = socket(AF_INET, SOCK_STREAM, 0 ) ) < 0 )
@@ -393,7 +394,7 @@ eTestResult simpleEchoServTest( void )
     FD_ZERO(&readfds);
     FD_SET(list_s, &readfds);
 
-    while( flag == FALSE )
+    while( fin != 6 )
     {
         char ch[ MAX_LINE ];
         int fd, result;
@@ -403,53 +404,52 @@ eTestResult simpleEchoServTest( void )
 
         LOG( "Waiting for a connection" );
 
-        result = select(FD_SETSIZE, &testfds, (fd_set *)0, (fd_set *)0, (struct timeval *) 0);
-        if(result < 1)
+        //result = select(FD_SETSIZE, &testfds, (fd_set *)0, (fd_set *)0, (struct timeval *) 0);
+        result = select(FD_SETSIZE, &testfds, NULL, NULL, NULL);
+        if( result < 1 )
         {
-            LOG("Problem with select");
+            LOG( "Problem with select" );
             return SYS_FAIL;
         }
 
-        for(fd = 0; fd < FD_SETSIZE; fd++)
+        for( fd = 0; fd < FD_SETSIZE; fd++ )
         {
-            if(FD_ISSET(fd,&testfds))
+            if( FD_ISSET( fd,&testfds ))
             {
-                if(fd == list_s)
+                LOG( "fd = %d \t\t list_s =%d", fd, list_s );
+                if( fd == list_s )
                 {
-                    //client_len = sizeof(client_address);
-                    //conn_s = accept(list_s, (struct sockaddr *)&client_address, &client_len);
-                    if( ( conn_s = accept(list_s, NULL, NULL)) < 0 )
+                    if( ( conn_s = accept( list_s, NULL, NULL )) < 0 )
                     {
                         LOG( "Error calling accept()" );
                         return SYS_FAIL;
                     }
-                    LOG( "Done" );
 
-                    FD_SET(conn_s, &readfds);
-                    LOG("adding client on fd %d", conn_s);
+                    FD_SET( conn_s, &readfds );
+                    LOG("-------------- new client --------------");
+                    LOG( "Adding client on fd %d", conn_s );
                 }
                 else
                 {
-                    ioctl(fd, FIONREAD, &nread);
+                    LOG("fd = %d \t\t nread = %d", fd, nread );
+                    ioctl( fd, FIONREAD, &nread);
                     if(nread == 0)
                     {
-                        close(fd);
-                        FD_CLR(fd, &readfds);
-                        LOG("removing client on fd %d\n", fd);
+                        close( fd );
+                        FD_CLR( fd, &readfds );
+                        LOG( "Removing client on fd %d\n", fd );
                     }
                     else
                     {
-                        //read(fd, &ch, 1);
                         readLine( fd, ch, MAX_LINE-1 );
                         sleep(5);
-                        LOG("serving client on fd %d\n", fd);
-                        //ch++;
-                        //write(fd, &ch, strlen(ch));
+                        LOG("Serving client on fd %d\n", fd);
                         writeLine( fd, ch, strlen( ch ) );
                     }
                 }
             }
         }
+        fin++;
     }
  /*       if( ( conn_s = accept( list_s, NULL, NULL ) ) < 0 )
         {
