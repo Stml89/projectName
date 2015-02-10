@@ -426,7 +426,7 @@ eTestResult simpleEchoServTest( void )
                     }
 
                     FD_SET( conn_s, &readfds );
-                    LOG("-------------- new client --------------");
+                    LOG("New connection , socket fd is %d , ip is : %s , port : %d \n" , conn_s , inet_ntoa(servaddr.sin_addr) , ntohs(servaddr.sin_port));
                     LOG( "Adding client on fd %d", conn_s );
                 }
                 else
